@@ -1,1 +1,7 @@
-nodemodules/
+# npm
+/node_modules
+
+# Windows files
+Thumbs.db
+*.env
+google-appeng-creds.json

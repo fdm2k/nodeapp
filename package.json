@@ -1,19 +1,24 @@
 {
   "name": "nodeapp",
-  "version": "1.0.0",
-  "description": "test node.js app",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Test node.js app",
+  "main": "server.js",
   "dependencies": {
+    "babel-register": "^6.7.2",
+    "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "sendevent": "^1.0.4",
-    "uglify-js": "^2.6.2",
-    "watch": "^0.17.1"
+    "google-spreadsheet": "^2.0.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "adam sando",
-  "license": "ISC"
+  "author": "@fdm2k",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdm2k/nodeapp.git"
+  }
 }
