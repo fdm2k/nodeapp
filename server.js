@@ -53,6 +53,4 @@ app.get('/about', function(req, res) {
 
 app.listen(port);
 
-console.log(quotes+" - That's a total of "+quote_count+" quotes.");
-
 console.log('Listening on port '+port+'. Open up '+host+':'+port+'/ in your browser.');
