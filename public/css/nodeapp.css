@@ -22,3 +22,18 @@ body {
 .navbar-brand>img {
   display: inline;
 }
+.btn-round {
+  background-color: transparent;
+  color: #CCCCCC;
+  border-color: #CCCCCC;
+  border-radius: 30px !important;
+  padding: 9px 18px;
+}
+.btn-round:hover,
+.btn-round:focus {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  border-radius: 30px !important;
+  padding: 9px 18px;
+}
