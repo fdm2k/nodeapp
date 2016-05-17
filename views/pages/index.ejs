@@ -1,36 +1,111 @@
-<!-- views/pages/index.ejs -->
+<!-- views/pages/about.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include ../partials/head %>
-</head>
-<body class="container">
+  <head>
+      <% include ../partials/head %>
+  </head>
 
-    <header>
+  <body>
+    <div class="navbar-wrapper">
+      <header class="container">
         <% include ../partials/header %>
-    </header>
+      </header>
+    </div>
 
-    <main>
-        <div class="jumbotron">
-            <h1>This is great</h1>
-            <p>Welcome to templating using EJS</p>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-            <h2>Variable</h2>
-            <p><%= tagline %></p>
+    <div class="container marketing">
+      <h2 class="text-center">Welcome to ballsonmychin.com</h2>
+      <p>Where all your Costner dreams come true.</p>
+      <p>&nbsp;</p>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/img/costner-fighter.jpg" alt="Costner: Fighter" width="200" height="200">
+          <h3>Fighter</h3>
+          <p>He robs from the rich and gives to himself. But he <i>will</i> fight for you.</p>
+          <p><a class="btn btn-default" href="https://www.youtube.com/watch?v=fhz5aB-u77Q" role="button" target="_blank">Costner Vision&trade; &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="/img/costner-lover.jpg" alt="Costner: Lover" width="200" height="200">
+          <h3>Lover</h3>
+          <p>Don Juan Costner. Even Fabio pales in comparison.</p>
+          <p><a class="btn btn-default disable" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="/img/costner-bodyguard.jpg" alt="Costner: Bodyguard" width="200" height="200">
+          <h3>Bodyguard</h3>
+          <p>Kevin Costner is most certainly the best bodyguard of all time.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
-            <h2>Loop</h2>
-            <ul>
-              <% drinks.forEach(function(drink) { %>
-                <li><%= drink.name %> - <%= drink.drunkness %></li>
-              <% }); %>
-            </ul>
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Massive movie star!</h2>
+            <p class="lead">Kevin Costner was in Field of Dreams. Here he is posing IRL next to a giant VHS tape.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" src="/img/fod-vhs.jpg" alt="Field of Dreams" width="100%">
+          </div>
         </div>
-    </main>
 
-    <footer>
-        <% include ../partials/footer %>
-    </footer>
+        <hr class="featurette-divider">
 
-</body>
-</html>
+        <div class="row featurette">
+          <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">So many movies!</h2>
+            <p class="lead">He's starred in everything from Police Academy to Star Wars, from Flashdance to Waterworks. He's played a pirate, a monk, a transgender toaster; you name it, he's played it!</p>
+          </div>
+          <div class="col-md-5 col-md-pull-7">
+            <img class="featurette-image img-responsive center-block" src="/img/not-costner.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">What the actual... <span class="text-muted">fuck.</span></h2>
+            <p class="lead">Shit just got real.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" src="/img/bg.gif" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <div>
+          <p><a href="#">Back to top</a></p>
+        </div>
+
+        <hr class="featurette-divider">
+        <!-- /END THE FEATURETTES -->
+
+        <!-- FOOTER -->
+        <footer>
+          <% include ../partials/footer %>
+        </footer>
+
+      </div><!-- /.container -->
+
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+      <script src="/assets/js/vendor/holder.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+  </html>

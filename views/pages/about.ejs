@@ -2,56 +2,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include ../partials/head %>
-</head>
-<body class="container">
+  <head>
+      <% include ../partials/head %>
+  </head>
 
-    <header>
+  <body>
+    <div class="navbar-wrapper">
+      <header class="container">
         <% include ../partials/header %>
-    </header>
+      </header>
+    </div>
 
-    <main>
-        <div class="row">
-            <div class="col-sm-8">
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-                <div class="jumbotron">
-                    <h1>This is great</h1>
-                    <p>Welcome to templating using EJS</p>
-                    <table>
-                      <tr>
-                        <td><strong>Hostname:</strong></td><td><%- server_hostname -%></td>
-                      </tr>
-                      <tr>
-                        <td><strong>OS Type:</strong></td><td><%- server_ostype -%></td>
-                      </tr>
-                      <tr>
-                        <td><strong>OS Platform:</strong></td><td><%- server_osplatform -%></td>
-                      </tr>
-                      <tr>
-                        <td><strong>Total RAM:</strong></td><td><%- server_ostotalmem -%></td>
-                      </tr>
-                      <tr>
-                        <td><strong>Free RAM:</strong></td><td><%- server_osfreemem -%></td>
-                      </tr>
-                    </table>
+    <div class="container marketing">
+      <h2 class="text-center">Welcome to ballsonmychin.com</h2>
+      <p>This site was made in memory of all the POON LANs ever held.</p>
+      <p>&nbsp;</p>
+      <!-- Three columns of text below the carousel -->
 
-                </div>
-
-            </div>
-            <div class="col-sm-4">
-
-                <div class="well">
-                    <h3>Look I'm A Sidebar!</h3>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
+      <!-- FOOTER -->
+      <footer>
+        <hr class="featurette-divider">
         <% include ../partials/footer %>
-    </footer>
+      </footer>
 
-</body>
+    </div><!-- /.container -->
+
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="/js/bootstrap.min.js"></script>
+      <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+      <script src="/assets/js/vendor/holder.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

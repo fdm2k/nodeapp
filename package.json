@@ -5,11 +5,14 @@
   "main": "server.js",
   "dependencies": {
     "babel-register": "^6.7.2",
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.6",
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "google-spreadsheet": "^2.0.2"
+    "google-spreadsheet": "^2.0.2",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {},
   "scripts": {

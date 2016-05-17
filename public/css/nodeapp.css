@@ -1,0 +1,24 @@
+/* Custom styles here */
+
+/* Colour palette derived from:
+ https://coolors.co/app/50514f-f25f5c-ffe066-247ba0-70c1b3
+- Brown: #50514F
+- Red/Pink: #F25F5C
+- Yellow: #FFE066
+- Blue: #247BA0
+- Aqua: #70C1B3
+- Hop cone: #7AC74F
+*/
+
+body {
+  padding-top: 50px; /* was 60px to accommodate navbar */
+  background-color: #50514F;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  color: #7AC74F;
+  border-bottom-color: #7AC74F;
+}
+.navbar-brand>img {
+  display: inline;
+}

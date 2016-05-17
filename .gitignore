@@ -4,4 +4,4 @@
 # Windows files
 Thumbs.db
 *.env
-google-appeng-creds.json
+googleapps-creds.json
