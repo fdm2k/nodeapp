@@ -4,6 +4,7 @@ var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var fs = require('fs');
 
 // Setup the app using Express
 var app = express();
@@ -14,6 +15,9 @@ const port = process.env.INTERNAL_PORT || 3000;
 
 var quotes = process.env.KC_QUOTES.split('","') || 'No quotes found!';
 var quote_count = quotes.length;
+
+var files = fs.readdirSync(process.env.IMG_PATH) || './public/img/about/';
+var imgCount = files.length;
 
 // view engine setup
 app.engine('html', ejs.renderFile);
@@ -37,7 +41,7 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
   var pagename = "About";
   var min = 1;
-  var max = 13;
+  var max = imgCount;
   var min_quotes = 1;
   var max_quotes = quote_count;
 

@@ -1,10 +1,15 @@
 <!-- views/pages/about.ejs -->
 
+<% var imgFile = Math.round(Math.random() * (max - min) + min); %>
+<% var curQuote = quotes[(Math.round(Math.random() * (max_quotes - min_quotes) + min_quotes)-1)]; %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
       <% include ../partials/head %>
   </head>
+
+
 
   <body>
     <div class="navbar-wrapper">
@@ -25,14 +30,13 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <img class="img-circle" src="/img/<%= Math.round(Math.random() * (max - min) + min); %>.jpg" alt="Costner: Fighter" width="250" height="250">
+          <img class="img-circle" src="/img/about/<%= imgFile %>.jpg" alt="<%= imgFile %>.jpg" width="250" height="250">
           <h3>Random Costner Quote:</h3>
-          <p><i>"<%= quotes[(Math.round(Math.random() * (max_quotes - min_quotes) + min_quotes)-1)]; %>"</i></p>
+          <p><i>"<%= curQuote %>"</i></p>
         </div>
       </div>
 
       <hr class="featurette-divider">
-
       <!-- /END THE FEATURETTES -->
 
       <!-- FOOTER -->
