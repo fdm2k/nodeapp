@@ -17,14 +17,22 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div class="container-fluid marketing">
       <h2 class="text-center">Welcome to ballsonmychin.com</h2>
       <p>This site was made in memory of all the POON LANs ever held.</p>
       <p>&nbsp;</p>
       <!-- Three columns of text below the carousel -->
 
-      <hr class="featurette-divider">
+      <div class="row">
+        <div class="col-lg-12">
+          <img class="img-circle" src="/img/<%= Math.round(Math.random() * (max - min) + min); %>.jpg" alt="Costner: Fighter" width="250" height="250">
+          <h3>Random Costner Quote:</h3>
+          <p><i>"<%= quotes[(Math.round(Math.random() * (max_quotes - min_quotes) + min_quotes)-1)]; %>"</i></p>
+        </div>
+      </div>
+
       <!-- /END THE FEATURETTES -->
+      <hr class="featurette-divider">
 
       <!-- FOOTER -->
       <footer>

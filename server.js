@@ -12,6 +12,9 @@ var app = express();
 const host = process.env.INTERNAL_HOST || 'http://localhost';
 const port = process.env.INTERNAL_PORT || 3000;
 
+var quotes = process.env.KC_QUOTES.split('","') || 'No quotes found!';
+var quote_count = quotes.length;
+
 // view engine setup
 app.engine('html', ejs.renderFile);
 app.set('views', path.join(__dirname, 'views'));
@@ -33,11 +36,23 @@ app.get('/', function(req, res) {
 
 app.get('/about', function(req, res) {
   var pagename = "About";
+  var min = 1;
+  var max = 13;
+  var min_quotes = 1;
+  var max_quotes = quote_count;
+
   res.render('pages/about', {
-    pagename: pagename
+    pagename: pagename,
+    min: min,
+    max: max,
+    quotes: quotes,
+    min_quotes: min_quotes,
+    max_quotes: max_quotes
   });
 });
 
 app.listen(port);
+
+console.log(quotes+" - That's a total of "+quote_count+" quotes.");
 
 console.log('Listening on port '+port+'. Open up '+host+':'+port+'/ in your browser.');

@@ -25,10 +25,11 @@ body {
 .btn-round,
 .btn-round:focus {
   background-color: transparent;
-  color: #CCCCCC;
-  border-color: #CCCCCC;
+  color: #EEEEEE;
+  border-color: #EEEEEE;
   border-radius: 30px !important;
   padding: 9px 18px;
+  text-shadow: none;
 }
 .btn-round:hover,
 .btn-round:active {
@@ -37,4 +38,5 @@ body {
   border-color: white;
   border-radius: 30px !important;
   padding: 9px 18px;
+  text-shadow: none;
 }
