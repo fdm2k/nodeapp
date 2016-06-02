@@ -25,7 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
-app.use(morgan('dev')); 					// log every request to the console
+app.use(morgan('combined')); 					// log every request to the console
 app.use(bodyParser()); 						// pull information from html in POST
 app.use(methodOverride()); 					// simulate DELETE and PUT
 
