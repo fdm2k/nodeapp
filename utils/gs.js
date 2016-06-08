@@ -2,13 +2,13 @@ var GoogleSpreadsheet = require('google-spreadsheet');
 var async = require('async');
 
 // spreadsheet key is the long id in the sheets URL
-var doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET);
+var doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
 var sheet;
 
 async.series([
   function setAuth(step) {
     // see notes below for authentication instructions!
-    var creds = require('./googleapps-creds.json');
+    var creds = require('../googleapps-creds.json');
     // OR, if you cannot save the file locally (like on heroku)
     //var creds_json = {
     //  client_email: 'yourserviceaccountemailhere@google.com',

@@ -4,8 +4,10 @@ node_modules/
 
 # Windows files
 Thumbs.db
+
+# Environment-specific files
 *.env
-googleapps-creds.json
+*-creds.json
 
 # Logging files
 *.log
