@@ -8,7 +8,7 @@ var sheet;
 async.series([
   function setAuth(step) {
     // see notes below for authentication instructions!
-    var creds = require('../googleapps-creds.json');
+    var creds = require('../ga-creds.json');
     // OR, if you cannot save the file locally (like on heroku)
     //var creds_json = {
     //  client_email: 'yourserviceaccountemailhere@google.com',
