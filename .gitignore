@@ -12,3 +12,5 @@ Thumbs.db
 # Logging files
 *.log
 logs/
+
+test.js

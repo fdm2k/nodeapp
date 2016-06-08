@@ -15,13 +15,13 @@ const host = process.env.INTERNAL_HOST || 'http://localhost';
 const port = process.env.INTERNAL_PORT || 3000;
 
 // Setup the image path
-const files = fs.readdirSync(process.env.IMG_PATH) || './public/img/about/';
+const imgFiles = fs.readdirSync(process.env.IMG_PATH) || './public/img/about/';
 
 // Setup the random quotes of awesomeness
 var quotes = process.env.KC_QUOTES.split('","') || 'No quotes found!';
-var quote_count = quotes.length;
+var quoteCount = quotes.length;
 
-var imgCount = files.length;
+var imgCount = imgFiles.length;
 
 // view engine setup
 app.engine('html', ejs.renderFile);
@@ -36,25 +36,49 @@ app.use(methodOverride()); 					// simulate DELETE and PUT
 
 // serve an empty page that just loads the browserify bundle
 app.get('/', function(req, res) {
-  var pagename = "Home";
+  var pageName = "Home";
+  var imgSetLength = 3;
+  var minImg = 1;
+  var maxImg = imgCount;
+  var minQuotes = 1;
+  var maxQuotes = quoteCount;
+  var imgSet = [];
+
+  while (imgSet.length < imgSetLength) {
+    var randNum = Math.ceil(Math.random() * (maxImg - minImg) + minImg);
+    var found = false;
+
+    for (var i = 0; i < imgSet.length; i++) {
+  	   if (imgSet[i] === randNum) {
+         found = true;
+         break;
+       }
+    }
+    if(!found) {
+      imgSet[imgSet.length] = randNum;
+    }
+  }
 
   res.render('pages/index', {
-    pagename: pagename
+    pageName: pageName,
+    imgFile1: imgSet[0],
+    imgFile2: imgSet[1],
+    imgFile3: imgSet[2]
   });
 });
 
 app.get('/about', function(req, res) {
-  var pagename = "About";
-  var min = 1;
-  var max = imgCount;
-  var min_quotes = 1;
-  var max_quotes = quote_count;
+  var pageName = "About";
+  var minImg = 1;
+  var maxImg = imgCount;
+  var minQuotes = 1;
+  var maxQuotes = quoteCount;
 
-  var imgFile = Math.round(Math.random() * (max - min) + min);
-  var curQuote = quotes[(Math.round(Math.random() * (max_quotes - min_quotes) + min_quotes)-1)];
+  var imgFile = Math.round(Math.random() * (maxImg - minImg) + minImg);
+  var curQuote = quotes[(Math.round(Math.random() * (maxQuotes - minQuotes) + minQuotes)-1)];
 
   res.render('pages/about', {
-    pagename: pagename,
+    pageName: pageName,
     imgFile: imgFile,
     curQuote: curQuote
   });
