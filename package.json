@@ -10,7 +10,9 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "google-spreadsheet": "^2.0.2",
+    "file-stream-rotator": "latest",
+    "google-spreadsheet": "latest",
+    "log-to-file-and-console-node": "^1.0.1",
     "method-override": "^2.3.5",
     "morgan": "^1.7.0"
   },

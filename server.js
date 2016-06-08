@@ -5,6 +5,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var fs = require('fs');
+var logger = require("./utils/logger");
 
 // Setup the app using Express
 var app = express();
@@ -13,10 +14,13 @@ var app = express();
 const host = process.env.INTERNAL_HOST || 'http://localhost';
 const port = process.env.INTERNAL_PORT || 3000;
 
+// Setup the image path
+const files = fs.readdirSync(process.env.IMG_PATH) || './public/img/about/';
+
+// Setup the random quotes of awesomeness
 var quotes = process.env.KC_QUOTES.split('","') || 'No quotes found!';
 var quote_count = quotes.length;
 
-var files = fs.readdirSync(process.env.IMG_PATH) || './public/img/about/';
 var imgCount = files.length;
 
 // view engine setup
@@ -25,7 +29,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
-app.use(morgan('combined')); 					// log every request to the console
+//app.use(morgan('combined')); 					// log every request to the console
+app.use(morgan('combined', {stream: logger.stream})); // Log to console and file
 app.use(bodyParser()); 						// pull information from html in POST
 app.use(methodOverride()); 					// simulate DELETE and PUT
 

@@ -1,5 +1,6 @@
 # npm
 /node_modules
+node_modules/
 
 # Windows files
 Thumbs.db
