@@ -50,13 +50,13 @@ app.get('/about', function(req, res) {
   var min_quotes = 1;
   var max_quotes = quote_count;
 
+  var imgFile = Math.round(Math.random() * (max - min) + min);
+  var curQuote = quotes[(Math.round(Math.random() * (max_quotes - min_quotes) + min_quotes)-1)];
+
   res.render('pages/about', {
     pagename: pagename,
-    min: min,
-    max: max,
-    quotes: quotes,
-    min_quotes: min_quotes,
-    max_quotes: max_quotes
+    imgFile: imgFile,
+    curQuote: curQuote
   });
 });
 
