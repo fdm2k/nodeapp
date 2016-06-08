@@ -6,3 +6,7 @@ node_modules/
 Thumbs.db
 *.env
 googleapps-creds.json
+
+# Logging files
+*.log
+logs/

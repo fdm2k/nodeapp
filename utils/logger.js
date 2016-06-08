@@ -1,6 +1,6 @@
 var winston = require('winston');
 var path = require('path');
-var fileStreamRotator = require('file-stream-rotator')
+var fs = require('fs');
 
 const logPath = process.env.LOG_PATH || '../';
 const logFile = process.env.LOG_FILENAME || 'access';
@@ -11,9 +11,14 @@ Date.prototype.yyyymmdd = function() {
    var dd  = this.getDate().toString();
    return yyyy + (mm[1]?mm:"0"+mm[0]) + (dd[1]?dd:"0"+dd[0]); // padding
   };
-
 d = new Date();
-var logFilePath = path.join(__dirname, logPath + logFile + '-' + d.yyyymmdd() + '.log');
+
+var logDir = path.join(__dirname, logPath);
+var logDirFile = path.join(logDir + logFile + '-' + d.yyyymmdd() + '.log');
+
+if (!fs.existsSync(logDir)){
+    fs.mkdirSync(logDir);
+}
 
 winston.emitErrs = true;
 
@@ -21,7 +26,7 @@ var logger = new winston.Logger({
     transports: [
         new winston.transports.File({
             level: process.env.LOG_LEVEL,
-            filename: logFilePath,
+            filename: logDirFile,
             handleExceptions: true,
             json: true,
             maxsize: 10485760, //10MB
