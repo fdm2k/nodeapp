@@ -84,6 +84,19 @@ app.get('/about', function(req, res) {
   });
 });
 
+// setup WPAD discovery for local Squid
+app.get('/wpad.dat', function(req, res) {
+  res.render('pages/wpad');
+});
+
+app.get('/wpad.da', function(req, res) {
+  res.render('pages/wpad');
+});
+
+app.get('/proxy.pac', function(req, res) {
+  res.render('pages/wpad');
+});
+
 app.listen(port);
 
 console.log('Listening on port '+port+'. Open up '+host+':'+port+'/ in your browser.');
